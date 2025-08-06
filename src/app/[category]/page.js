@@ -147,7 +147,7 @@ export function generateMetadata({ params }) {
   }
 
   return {
-    title: `${categoryData[category].title} - WhatsBotGPT Support`,
+    title: `${categoryData[category].title} - Suporte WhatsBotGPT`,
     description: categoryData[category].description
   };
 }
@@ -169,7 +169,7 @@ export default function CategoryPage({ params }) {
         <nav className="flex mb-8" aria-label="Breadcrumb">
           <ol className="flex items-center space-x-2">
             <li>
-              <Link href="/" className="text-gray-500 hover:text-gray-700">Home</Link>
+              <Link href="/" className="text-gray-500 hover:text-gray-700">Início</Link>
             </li>
             <li className="flex items-center">
               <svg className="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
@@ -198,7 +198,7 @@ export default function CategoryPage({ params }) {
                 <h3 className="text-lg font-medium text-blue-600 group-hover:text-blue-800">{article.title}</h3>
                 <p className="mt-2 text-sm text-gray-500">{article.description}</p>
                 <div className="mt-4 flex items-center text-sm text-blue-500">
-                  <span>Read article</span>
+                  <span>Ler artigo</span>
                   <svg className="ml-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>

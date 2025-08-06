@@ -2,7 +2,7 @@
 
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 
 // This would typically come from an API or search service
 // For now, we'll use a static list of searchable content
@@ -94,7 +94,8 @@ const getCategoryTitle = (category) => {
   return categoryTitles[category] || category;
 };
 
-export default function SearchPage() {
+// SearchContent component that uses useSearchParams
+function SearchContent() {
   const searchParams = useSearchParams();
   const query = searchParams.get('q') || '';
   const [results, setResults] = useState([]);
@@ -118,7 +119,7 @@ export default function SearchPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
           <h1 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-            Resultados da Busca para "{query}"
+            Resultados da Busca para &quot;{query}&quot;
           </h1>
           <p className="mt-4 text-xl text-gray-500">
             {isSearching 
@@ -155,7 +156,7 @@ export default function SearchPage() {
         ) : (
           <div className="text-center py-12">
             <p className="text-gray-500 mb-6">
-              Não encontramos nenhum resultado para "{query}". Tente usar palavras-chave diferentes ou verifique a ortografia.
+              Não encontramos nenhum resultado para &quot;{query}&quot;. Tente usar palavras-chave diferentes ou verifique a ortografia.
             </p>
             <Link 
               href="/"
@@ -185,5 +186,34 @@ export default function SearchPage() {
         )}
       </div>
     </div>
+  );
+}
+
+// Loading component for Suspense fallback
+function SearchLoading() {
+  return (
+    <div className="bg-white py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-12">
+          <h1 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            Carregando resultados...
+          </h1>
+        </div>
+        <div className="flex flex-col items-center justify-center">
+          <div className="animate-pulse h-4 bg-gray-200 rounded w-1/2 mb-4"></div>
+          <div className="animate-pulse h-4 bg-gray-200 rounded w-1/2 mb-4"></div>
+          <div className="animate-pulse h-4 bg-gray-200 rounded w-1/2 mb-4"></div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Main SearchPage component that wraps SearchContent with Suspense
+export default function SearchPage() {
+  return (
+    <Suspense fallback={<SearchLoading />}>
+      <SearchContent />
+    </Suspense>
   );
 }

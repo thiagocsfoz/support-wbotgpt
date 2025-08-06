@@ -223,39 +223,39 @@ Congratulations! Your WhatsApp is now connected to WhatsBotGPT. You can start us
 
 export function generateMetadata({ params }) {
   const { category, article } = params;
-  
+
   if (!articleData[category] || !articleData[category][article]) {
     return {
-      title: 'Article Not Found'
+      title: 'Artigo Não Encontrado'
     };
   }
-  
+
   const articleInfo = articleData[category][article];
-  
+
   return {
-    title: `${articleInfo.title} - WhatsBotGPT Support`,
+    title: `${articleInfo.title} - Suporte WhatsBotGPT`,
     description: articleInfo.description
   };
 }
 
 export default function ArticlePage({ params }) {
   const { category, article } = params;
-  
+
   // Check if the article exists
   if (!articleData[category] || !articleData[category][article]) {
     notFound();
   }
-  
+
   const articleInfo = articleData[category][article];
   const categoryTitle = {
-    'getting-started': 'Getting Started',
-    'core-features': 'Core Features',
-    'integrations': 'Integrations',
-    'billing-account': 'Billing & Account',
-    'troubleshooting': 'Troubleshooting',
-    'faqs': 'FAQs'
+    'getting-started': 'Primeiros Passos',
+    'core-features': 'Recursos Principais',
+    'integrations': 'Integrações',
+    'billing-account': 'Faturamento & Conta',
+    'troubleshooting': 'Solução de Problemas',
+    'faqs': 'Perguntas Frequentes'
   }[category];
-  
+
   // Function to convert markdown-like content to JSX
   // This is a very simplified version - in a real app, you'd use a proper markdown parser
   const renderContent = (content) => {
@@ -280,20 +280,20 @@ export default function ArticlePage({ params }) {
         let match;
         let parts = [];
         let lastIndex = 0;
-        
+
         while ((match = boldPattern.exec(formattedLine)) !== null) {
           parts.push(formattedLine.substring(lastIndex, match.index));
           parts.push(<strong key={`${index}-${match.index}`}>{match[1]}</strong>);
           lastIndex = match.index + match[0].length;
         }
-        
+
         parts.push(formattedLine.substring(lastIndex));
-        
+
         return <p key={index} className="my-2">{parts}</p>;
       }
     });
   };
-  
+
   return (
     <div className="bg-white py-8">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -301,7 +301,7 @@ export default function ArticlePage({ params }) {
         <nav className="flex mb-8" aria-label="Breadcrumb">
           <ol className="flex items-center space-x-2">
             <li>
-              <Link href="/" className="text-gray-500 hover:text-gray-700">Home</Link>
+              <Link href="/" className="text-gray-500 hover:text-gray-700">Início</Link>
             </li>
             <li className="flex items-center">
               <svg className="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
@@ -317,28 +317,28 @@ export default function ArticlePage({ params }) {
             </li>
           </ol>
         </nav>
-        
+
         {/* Article content */}
         <article className="prose prose-blue max-w-none">
           {renderContent(articleInfo.content)}
         </article>
-        
+
         {/* Article feedback */}
         <div className="mt-12 pt-6 border-t border-gray-200">
-          <h3 className="text-lg font-medium text-gray-900">Was this article helpful?</h3>
+          <h3 className="text-lg font-medium text-gray-900">Este artigo foi útil?</h3>
           <div className="mt-2 flex space-x-4">
             <button className="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">
-              Yes, it helped
+              Sim, ajudou
             </button>
             <button className="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">
-              No, I need more help
+              Não, preciso de mais ajuda
             </button>
           </div>
         </div>
-        
+
         {/* Related articles */}
         <div className="mt-12">
-          <h3 className="text-lg font-medium text-gray-900">Related Articles</h3>
+          <h3 className="text-lg font-medium text-gray-900">Artigos Relacionados</h3>
           <ul className="mt-4 space-y-2">
             {Object.entries(articleData[category] || {})
               .filter(([slug]) => slug !== article)
