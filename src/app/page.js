@@ -1,6 +1,7 @@
 import SearchBar from "@/components/SearchBar";
 import CategoryNav from "@/components/CategoryNav";
 import Link from "next/link";
+import TopArticlesWrapper from "@/components/TopArticlesWrapper";
 
 export default function Home() {
   return (
@@ -45,36 +46,35 @@ export default function Home() {
           <div className="lg:text-center mb-12">
             <h2 className="text-base text-[var(--primary)] font-semibold tracking-wide uppercase font-heading">Artigos Populares</h2>
             <p className="mt-2 text-3xl leading-8 font-bold tracking-tight text-[var(--gray-dark)] sm:text-4xl font-heading">
-              Recursos Mais Visualizados
+              Artigos Mais Úteis
+            </p>
+            <p className="mt-4 max-w-2xl text-xl text-[var(--gray-medium)] lg:mx-auto">
+              Artigos classificados com base no feedback dos usuários.
             </p>
           </div>
-          <div className="mt-12">
-            <ul className="space-y-6 max-w-4xl mx-auto">
-              <li className="bg-white shadow-md overflow-hidden rounded-lg transition-all duration-200 hover:shadow-lg">
-                <Link href="/primeiros-passos/criando-conta" className="block hover:bg-[var(--gray-light)] p-6">
-                  <p className="text-lg font-semibold text-[var(--primary)] font-heading">Criando sua Conta e Realizando o Primeiro Login</p>
-                  <p className="mt-2 text-[var(--gray-medium)]">Aprenda como se cadastrar e configurar sua conta WhatsBotGPT</p>
-                </Link>
-              </li>
-              <li className="bg-white shadow-md overflow-hidden rounded-lg transition-all duration-200 hover:shadow-lg">
-                <Link href="/assistentes/criando-assistente" className="block hover:bg-[var(--gray-light)] p-6">
-                  <p className="text-lg font-semibold text-[var(--primary)] font-heading">Criando seu Primeiro Assistente</p>
-                  <p className="mt-2 text-[var(--gray-medium)]">Configure seu bot com personalidade e instruções personalizadas</p>
-                </Link>
-              </li>
-              <li className="bg-white shadow-md overflow-hidden rounded-lg transition-all duration-200 hover:shadow-lg">
-                <Link href="/leads-contatos/gerenciando-leads" className="block hover:bg-[var(--gray-light)] p-6">
-                  <p className="text-lg font-semibold text-[var(--primary)] font-heading">Gerenciando seus Leads</p>
-                  <p className="mt-2 text-[var(--gray-medium)]">Aprenda a visualizar e gerenciar os contatos gerados pelo seu bot</p>
-                </Link>
-              </li>
-              <li className="bg-white shadow-md overflow-hidden rounded-lg transition-all duration-200 hover:shadow-lg">
-                <Link href="/solucao-problemas/bot-nao-responde" className="block hover:bg-[var(--gray-light)] p-6">
-                  <p className="text-lg font-semibold text-[var(--primary)] font-heading">Meu bot não está respondendo</p>
-                  <p className="mt-2 text-[var(--gray-medium)]">Solucione problemas de resposta do seu assistente</p>
-                </Link>
-              </li>
-            </ul>
+          <div className="mt-12 max-w-4xl mx-auto">
+            {/* If there are no rated articles yet, show default articles */}
+            <div className="bg-white shadow-md rounded-lg p-6">
+              <TopArticlesWrapper limit={5} />
+
+              {/* Fallback content that will be shown while the TopArticles component is loading */}
+              <noscript>
+                <ul className="space-y-6">
+                  <li className="border-b border-gray-200 pb-4">
+                    <Link href="/primeiros-passos/criando-conta" className="block hover:bg-[var(--gray-light)] p-3 -m-3 rounded-lg">
+                      <p className="text-lg font-semibold text-[var(--primary)] font-heading">Criando sua Conta e Realizando o Primeiro Login</p>
+                      <p className="mt-2 text-[var(--gray-medium)]">Aprenda como se cadastrar e configurar sua conta WhatsBotGPT</p>
+                    </Link>
+                  </li>
+                  <li className="border-b border-gray-200 pb-4">
+                    <Link href="/assistentes/criando-assistente" className="block hover:bg-[var(--gray-light)] p-3 -m-3 rounded-lg">
+                      <p className="text-lg font-semibold text-[var(--primary)] font-heading">Criando seu Primeiro Assistente</p>
+                      <p className="mt-2 text-[var(--gray-medium)]">Configure seu bot com personalidade e instruções personalizadas</p>
+                    </Link>
+                  </li>
+                </ul>
+              </noscript>
+            </div>
           </div>
         </div>
       </div>

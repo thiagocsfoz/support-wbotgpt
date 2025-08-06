@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import TopArticlesWrapper from '@/components/TopArticlesWrapper';
 
 // This would typically come from a database or CMS
 // For now, we'll use a static mapping
@@ -132,8 +133,9 @@ const categoryData = {
   }
 };
 
-export function generateMetadata({ params }) {
-  const category = params.category;
+export async function generateMetadata({ params }) {
+  const resolvedParams = await params;
+  const category = resolvedParams.category;
 
   if (!categoryData[category]) {
     return {
@@ -147,8 +149,9 @@ export function generateMetadata({ params }) {
   };
 }
 
-export default function CategoryPage({ params }) {
-  const category = params.category;
+export default async function CategoryPage({ params }) {
+  const resolvedParams = await params;
+  const category = resolvedParams.category;
 
   // Check if the category exists
   if (!categoryData[category]) {
@@ -179,6 +182,16 @@ export default function CategoryPage({ params }) {
         <div className="mb-12">
           <h1 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">{title}</h1>
           <p className="mt-4 text-xl text-gray-500">{description}</p>
+        </div>
+
+        {/* Top articles in this category */}
+        <div className="mb-12">
+          <div className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+            <div className="p-6">
+              <h2 className="text-xl font-semibold text-gray-900 mb-4">Artigos Mais Úteis nesta Categoria</h2>
+              <TopArticlesWrapper category={category} limit={3} />
+            </div>
+          </div>
         </div>
 
         {/* Articles list */}

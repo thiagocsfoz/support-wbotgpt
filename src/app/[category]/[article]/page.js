@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import ArticleFeedbackWrapper from '@/components/ArticleFeedbackWrapper';
 
 // This would typically come from a database or CMS
 // For now, we'll use a static mapping
@@ -7,62 +8,107 @@ const articleData = {
   'primeiros-passos': {
     'criando-conta': {
       title: 'Criando sua Conta e Realizando o Primeiro Login',
-      description: 'Aprenda como se cadastrar e configurar sua conta WhatsBotGPT',
+      description: 'Um guia passo a passo para você criar sua conta na WBotGPT, aceitar os termos e fazer seu primeiro acesso à plataforma.',
       content: `
-# Creating your WhatsBotGPT Account
+# Criando sua Conta e Realizando o Primeiro Login
 
-Welcome to WhatsBotGPT! This guide will walk you through the process of creating and setting up your account.
+Um guia passo a passo para você criar sua conta na WBotGPT, aceitar os termos e fazer seu primeiro acesso à plataforma.
 
-## Prerequisites
+## 1. Como Criar sua Conta
 
-Before you begin, make sure you have:
-- A valid email address
-- A WhatsApp Business account (recommended) or a regular WhatsApp account
-- A payment method for subscription (credit card or PayPal)
+Para começar a usar o WBotGPT, o primeiro passo é criar sua conta pessoal. Siga as instruções abaixo.
 
-## Step 1: Sign Up
+### Passo 1: Preencha seus dados no formulário
 
-1. Visit [whatsbotgpt.store](https://whatsbotgpt.store)
-2. Click on the **Sign Up** button in the top right corner
-3. Enter your email address and create a password
-4. Click **Create Account**
+Acesse a [página de cadastro](https://app.whatsbotgpt.store/auth/register) e preencha os campos do formulário "Crie sua conta" com seu nome, documento (CPF ou CNPJ), e-mail, telefone e senha.
 
-## Step 2: Verify Your Email
+**Observação sobre o campo telefone:** Este número será utilizado para comunicados e atendimento de suporte. Não precisa ser o mesmo que você utilizará para o assistente.
 
-1. Check your email inbox for a verification message from WhatsBotGPT
-2. Click the verification link in the email
-3. You'll be redirected to the login page
+![Formulário de criação de conta](/images/criando-conta/formulario-criacao-conta.png)
 
-## Step 3: Complete Your Profile
+### Passo 2: Leia e Aceite os Termos e Políticas
 
-1. Log in with your email and password
-2. Fill out your profile information:
-   - Full name
-   - Company name (if applicable)
-   - Phone number
-3. Click **Save Profile**
+Antes de finalizar, é fundamental ler e concordar com os nossos termos.
 
-## Step 4: Choose a Subscription Plan
+Clique em "Termos de Uso" para abrir e ler o documento.
 
-1. Navigate to the **Plans** page
-2. Review the available subscription options
-3. Select the plan that best fits your needs
-4. Enter your payment information
-5. Click **Subscribe**
+Clique em "Política de Privacidade" para entender como cuidamos dos seus dados, de acordo com a LGPD.
 
-## Step 5: Access Your Dashboard
+Após a leitura de ambos, marque as duas caixas de seleção confirmando que você leu e concorda.
 
-After completing the subscription process, you'll be redirected to your dashboard where you can start creating your first bot.
+![Termos de uso e política de privacidade](/images/criando-conta/termos-politica-privacidade.png)
 
-## Troubleshooting
+### Passo 3: Finalize o Cadastro
 
-If you encounter any issues during the sign-up process:
-- Make sure your email address is entered correctly
-- Check that your password meets the minimum requirements
-- Clear your browser cache and try again
-- Contact support at support@whatsbotgpt.store
+Com todos os campos preenchidos e os termos aceitos, clique no botão verde "Criar conta" para concluir.
 
-Congratulations! You've successfully created your WhatsBotGPT account. The next step is to [conectar seu WhatsApp](/primeiros-passos/conectando-whatsapp).
+Após finalizar o cadastro, o login será realizado automaticamente e você será direcionado para a plataforma. Caso isso não ocorra, você pode realizar o login manualmente através do link: [https://app.whatsbotgpt.store/auth/login](https://app.whatsbotgpt.store/auth/login)
+
+## 2. Como Entrar na sua Conta (Login)
+
+Com a conta criada, você já pode acessar seu painel de controle.
+
+### Passo 1: Acesse a tela de Login
+
+Na página principal do app, clique no link "Já tem uma conta? Faça login". Você será direcionado para a tela "Entrar na conta".
+
+### Passo 2: Preencha suas credenciais
+
+Digite o e-mail e a senha que você acabou de cadastrar e clique no botão verde "Entrar".
+
+![Tela de login](/images/criando-conta/tela-login.png)
+
+## 3. Esqueceu sua Senha?
+
+Caso não se lembre da sua senha, o processo de recuperação é simples.
+
+### Passo 1: Solicite a recuperação
+
+Na tela de login, clique no link "Esqueceu a senha?" ou acesse diretamente [https://app.whatsbotgpt.store/auth/forgot-password](https://app.whatsbotgpt.store/auth/forgot-password).
+
+### Passo 2: Informe seu CPF ou CNPJ
+
+Você será levado a uma nova tela. Digite o seu CPF ou CNPJ de cadastro e clique em "Recuperar minha senha". As instruções para criar uma nova senha serão enviadas para o número de telefone cadastrado.
+
+![Tela de recuperação de senha](/images/criando-conta/recuperacao-senha.png)
+
+## 4. Possíveis Problemas e Soluções
+
+Durante o processo de cadastro ou acesso, você pode encontrar algumas situações que requerem atenção especial. Confira abaixo as soluções para os problemas mais comuns:
+
+### Documento Inválido (CPF ou CNPJ)
+
+Se você receber uma mensagem informando que seu documento é inválido:
+
+- Verifique se digitou corretamente todos os números, sem pontos ou traços
+- Confirme se o documento informado está ativo e regular
+- Certifique-se de que está selecionando o tipo correto (CPF para pessoa física ou CNPJ para empresa)
+
+### Usuário Já Cadastrado
+
+Se o sistema indicar que seu CPF/CNPJ ou e-mail já está registrado:
+
+- Utilize a opção "[Esqueceu a senha?](#3-esqueceu-sua-senha)" na tela de login
+- Informe seu CPF ou CNPJ de cadastro
+- Siga as instruções de recuperação enviadas para o número de telefone cadastrado
+- Caso não receba a mensagem de recuperação, verifique se o número de telefone cadastrado está correto
+
+### Sem Acesso ao Telefone para Recuperação
+
+Se você não tiver mais acesso ao telefone cadastrado para recuperação:
+
+1. Envie um e-mail para [contato@whatsbotgpt.store](mailto:contato@whatsbotgpt.store) com o assunto "Recuperação de Acesso"
+2. Inclua seu nome completo e o e-mail cadastrado
+3. Nossa equipe de suporte entrará em contato para verificar sua identidade e auxiliar na recuperação
+
+### Outros Problemas de Acesso
+
+Se você encontrar qualquer outro problema durante o cadastro ou acesso:
+
+- **E-mail de Suporte:** [contato@whatsbotgpt.store](mailto:contato@whatsbotgpt.store)
+- **WhatsApp de Suporte:** [+55 11 97123-9515](https://wa.me/5511971239515)
+
+Nossa equipe está disponível para ajudar você a resolver qualquer dificuldade e garantir seu acesso à plataforma.
       `
     },
     'conectando-whatsapp': {
@@ -700,8 +746,10 @@ Para outros problemas comuns, consulte nosso artigo sobre [Problemas de Conexão
   // Add more articles for other categories as needed
 };
 
-export function generateMetadata({ params }) {
-  const { category, article } = params;
+export async function generateMetadata({ params }) {
+  const resolvedParams = await params;
+  const category = resolvedParams.category;
+  const article = resolvedParams.article;
 
   if (!articleData[category] || !articleData[category][article]) {
     return {
@@ -717,8 +765,10 @@ export function generateMetadata({ params }) {
   };
 }
 
-export default function ArticlePage({ params }) {
-  const { category, article } = params;
+export default async function ArticlePage({ params }) {
+  const resolvedParams = await params;
+  const category = resolvedParams.category;
+  const article = resolvedParams.article;
 
   // Check if the article exists
   if (!articleData[category] || !articleData[category][article]) {
@@ -738,39 +788,158 @@ export default function ArticlePage({ params }) {
   // Function to convert markdown-like content to JSX
   // This is a very simplified version - in a real app, you'd use a proper markdown parser
   const renderContent = (content) => {
-    return content.split('\n').map((line, index) => {
-      if (line.startsWith('# ')) {
-        return <h1 key={index} className="text-3xl font-bold mt-6 mb-4">{line.substring(2)}</h1>;
-      } else if (line.startsWith('## ')) {
-        return <h2 key={index} className="text-2xl font-semibold mt-6 mb-3">{line.substring(3)}</h2>;
-      } else if (line.startsWith('### ')) {
-        return <h3 key={index} className="text-xl font-semibold mt-5 mb-2">{line.substring(4)}</h3>;
-      } else if (line.startsWith('- ')) {
-        return <li key={index} className="ml-6 list-disc">{line.substring(2)}</li>;
-      } else if (line.startsWith('1. ') || line.startsWith('2. ') || line.startsWith('3. ') || 
-                 line.startsWith('4. ') || line.startsWith('5. ') || line.startsWith('6. ')) {
-        return <li key={index} className="ml-6 list-decimal">{line.substring(3)}</li>;
-      } else if (line.trim() === '') {
-        return <div key={index} className="my-2"></div>;
-      } else {
-        // Check for bold text
-        const boldPattern = /\*\*(.*?)\*\*/g;
-        let formattedLine = line;
-        let match;
-        let parts = [];
-        let lastIndex = 0;
+    const lines = content.split('\n');
+    const result = [];
+    let currentListItems = [];
+    let isOrderedList = false;
 
-        while ((match = boldPattern.exec(formattedLine)) !== null) {
-          parts.push(formattedLine.substring(lastIndex, match.index));
-          parts.push(<strong key={`${index}-${match.index}`}>{match[1]}</strong>);
-          lastIndex = match.index + match[0].length;
-        }
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
+      const index = i;
 
-        parts.push(formattedLine.substring(lastIndex));
-
-        return <p key={index} className="my-2">{parts}</p>;
+      // Process HTML comments
+      if (line.trim().startsWith('<!--') && line.trim().endsWith('-->')) {
+        // Skip HTML comments in the rendered output
+        continue;
       }
-    });
+
+      // Check if we're ending a list
+      const isListItem = line.startsWith('- ') || /^\d+\.\s/.test(line);
+      if (currentListItems.length > 0 && !isListItem) {
+        // End the current list
+        if (isOrderedList) {
+          result.push(<ol key={`ol-${index}`} className="list-decimal pl-8 my-4">{currentListItems}</ol>);
+        } else {
+          result.push(<ul key={`ul-${index}`} className="list-disc pl-8 my-4">{currentListItems}</ul>);
+        }
+        currentListItems = [];
+      }
+
+      // Process different line types
+      if (line.startsWith('# ')) {
+        result.push(<h1 key={index} className="text-3xl font-bold mt-6 mb-4">{processInlineFormatting(line.substring(2), index)}</h1>);
+      } else if (line.startsWith('## ')) {
+        result.push(<h2 key={index} className="text-2xl font-semibold mt-6 mb-3">{processInlineFormatting(line.substring(3), index)}</h2>);
+      } else if (line.startsWith('### ')) {
+        result.push(<h3 key={index} className="text-xl font-semibold mt-5 mb-2">{processInlineFormatting(line.substring(4), index)}</h3>);
+      } else if (line.startsWith('- ')) {
+        // Unordered list item
+        if (currentListItems.length === 0) {
+          isOrderedList = false;
+        }
+        currentListItems.push(<li key={index}>{processInlineFormatting(line.substring(2), index)}</li>);
+      } else if (/^\d+\.\s/.test(line)) {
+        // Ordered list item (matches "1. ", "2. ", etc.)
+        if (currentListItems.length === 0) {
+          isOrderedList = true;
+        }
+        const textContent = line.substring(line.indexOf(' ') + 1);
+        currentListItems.push(<li key={index}>{processInlineFormatting(textContent, index)}</li>);
+      } else if (line.trim() === '') {
+        result.push(<div key={index} className="my-2"></div>);
+      } else if (line.startsWith('![') && line.includes('](') && line.endsWith(')')) {
+        // Handle image: ![alt text](/path/to/image.png)
+        const altEndIndex = line.indexOf('](');
+        const altText = line.substring(2, altEndIndex);
+        const imageUrl = line.substring(altEndIndex + 2, line.length - 1);
+        result.push(<img key={index} src={imageUrl} alt={altText} className="my-4 max-w-full h-auto" />);
+      } else {
+        // Regular paragraph
+        result.push(<p key={index} className="my-2">{processInlineFormatting(line, index)}</p>);
+      }
+    }
+
+    // Handle any remaining list items
+    if (currentListItems.length > 0) {
+      if (isOrderedList) {
+        result.push(<ol key="final-ol" className="list-decimal pl-8 my-4">{currentListItems}</ol>);
+      } else {
+        result.push(<ul key="final-ul" className="list-disc pl-8 my-4">{currentListItems}</ul>);
+      }
+    }
+
+    return result;
+  };
+
+  // Helper function to process inline formatting (bold, links) within text
+  const processInlineFormatting = (text, lineIndex) => {
+    let processedText = text;
+    let parts = [];
+    let lastIndex = 0;
+
+    // First, process links [text](url)
+    const linkPattern = /\[(.*?)\]\((.*?)\)/g;
+    let linkMatch;
+
+    while ((linkMatch = linkPattern.exec(processedText)) !== null) {
+      // Add text before the link
+      if (linkMatch.index > lastIndex) {
+        parts.push(processBoldText(processedText.substring(lastIndex, linkMatch.index), lineIndex, lastIndex));
+      }
+
+      // Process the link text for bold formatting
+      const linkText = processBoldText(linkMatch[1], lineIndex, linkMatch.index + 1);
+
+      // Add the link - use anchor tag for internal links, Link component for external
+      const url = linkMatch[2];
+      if (url.startsWith('#')) {
+        // Internal anchor link
+        parts.push(
+          <a key={`link-${lineIndex}-${linkMatch.index}`} href={url} className="text-blue-600 hover:text-blue-800">
+            {linkText}
+          </a>
+        );
+      } else {
+        // External or route link
+        parts.push(
+          <Link key={`link-${lineIndex}-${linkMatch.index}`} href={url} className="text-blue-600 hover:text-blue-800">
+            {linkText}
+          </Link>
+        );
+      }
+
+      lastIndex = linkMatch.index + linkMatch[0].length;
+    }
+
+    // Add remaining text after the last link
+    if (lastIndex < processedText.length) {
+      parts.push(processBoldText(processedText.substring(lastIndex), lineIndex, lastIndex));
+    }
+
+    return parts.length > 0 ? parts : processedText;
+  };
+
+  // Helper function to process bold text
+  const processBoldText = (text, lineIndex, startIndex) => {
+    if (!text.includes('**')) return text;
+
+    const parts = [];
+    const boldPattern = /\*\*(.*?)\*\*/g;
+    let lastIndex = 0;
+    let boldMatch;
+
+    while ((boldMatch = boldPattern.exec(text)) !== null) {
+      // Add text before the bold
+      if (boldMatch.index > lastIndex) {
+        parts.push(text.substring(lastIndex, boldMatch.index));
+      }
+
+      // Add the bold text
+      parts.push(
+        <strong key={`bold-${lineIndex}-${startIndex + boldMatch.index}`}>
+          {boldMatch[1]}
+        </strong>
+      );
+
+      lastIndex = boldMatch.index + boldMatch[0].length;
+    }
+
+    // Add remaining text after the last bold
+    if (lastIndex < text.length) {
+      parts.push(text.substring(lastIndex));
+    }
+
+    return parts.length > 0 ? parts : text;
   };
 
   return (
@@ -803,17 +972,7 @@ export default function ArticlePage({ params }) {
         </article>
 
         {/* Article feedback */}
-        <div className="mt-12 pt-6 border-t border-gray-200">
-          <h3 className="text-lg font-medium text-gray-900">Este artigo foi útil?</h3>
-          <div className="mt-2 flex space-x-4">
-            <button className="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">
-              Sim, ajudou
-            </button>
-            <button className="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50">
-              Não, preciso de mais ajuda
-            </button>
-          </div>
-        </div>
+        <ArticleFeedbackWrapper category={category} article={article} />
 
         {/* Related articles */}
         <div className="mt-12">
