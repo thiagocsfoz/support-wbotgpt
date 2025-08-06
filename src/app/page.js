@@ -1,103 +1,103 @@
-import Image from "next/image";
+import SearchBar from "@/components/SearchBar";
+import CategoryNav from "@/components/CategoryNav";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="bg-white">
+      {/* Hero section with search */}
+      <div className="relative bg-gradient-to-r from-blue-500 to-blue-700 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+          <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl text-center">
+            Suporte WhatsBotGPT
+          </h1>
+          <p className="mt-3 max-w-md mx-auto text-base text-blue-100 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl text-center">
+            Encontre respostas para suas dúvidas e aprenda a tirar o máximo proveito do WhatsBotGPT
+          </p>
+          <div className="mt-10 w-full max-w-3xl">
+            <SearchBar placeholder="Como podemos ajudar você?" />
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+
+      {/* Categories section */}
+      <div className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="lg:text-center">
+            <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Documentação</h2>
+            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+              Navegue por Categoria
+            </p>
+            <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+              Explore nossos guias e exemplos para aprender tudo o que você precisa saber sobre o WhatsBotGPT.
+            </p>
+          </div>
+
+          <div className="mt-10">
+            <CategoryNav />
+          </div>
+        </div>
+      </div>
+
+      {/* Popular articles section */}
+      <div className="py-12 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="lg:text-center">
+            <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Artigos Populares</h2>
+            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+              Recursos Mais Visualizados
+            </p>
+          </div>
+          <div className="mt-10">
+            <ul className="space-y-4">
+              <li className="bg-white shadow overflow-hidden rounded-md">
+                <Link href="/getting-started/creating-account" className="block hover:bg-gray-50 p-4">
+                  <p className="text-lg font-medium text-blue-600">Criando sua conta</p>
+                  <p className="mt-1 text-gray-600">Aprenda como se cadastrar e configurar sua conta WhatsBotGPT</p>
+                </Link>
+              </li>
+              <li className="bg-white shadow overflow-hidden rounded-md">
+                <Link href="/core-features/automating-responses" className="block hover:bg-gray-50 p-4">
+                  <p className="text-lg font-medium text-blue-600">Automatizando Respostas</p>
+                  <p className="mt-1 text-gray-600">Configure respostas automáticas para perguntas comuns dos clientes</p>
+                </Link>
+              </li>
+              <li className="bg-white shadow overflow-hidden rounded-md">
+                <Link href="/troubleshooting/bot-not-responding" className="block hover:bg-gray-50 p-4">
+                  <p className="text-lg font-medium text-blue-600">Meu bot não está respondendo</p>
+                  <p className="mt-1 text-gray-600">Solucione problemas de resposta do bot</p>
+                </Link>
+              </li>
+              <li className="bg-white shadow overflow-hidden rounded-md">
+                <Link href="/integrations/crm-integration" className="block hover:bg-gray-50 p-4">
+                  <p className="text-lg font-medium text-blue-600">Integração com CRM</p>
+                  <p className="mt-1 text-gray-600">Conecte o WhatsBotGPT com plataformas populares de CRM</p>
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Contact support section */}
+      <div className="bg-blue-700">
+        <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
+          <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+            <span className="block">Não encontrou o que procurava?</span>
+            <span className="block text-blue-200">Nossa equipe de suporte está aqui para ajudar.</span>
+          </h2>
+          <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+            <div className="inline-flex rounded-md shadow">
+              <a
+                href="mailto:support@whatsbotgpt.store"
+                className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-blue-50"
+              >
+                Contatar Suporte
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

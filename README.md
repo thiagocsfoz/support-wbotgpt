@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# WhatsBotGPT Knowledge Base
 
-## Getting Started
+This is the official knowledge base and support portal for [WhatsBotGPT](https://whatsbotgpt.store). It provides comprehensive documentation, tutorials, and troubleshooting guides for users of all experience levels.
 
-First, run the development server:
+## Overview
+
+The WhatsBotGPT Knowledge Base is designed to help users get the most out of the platform. It includes:
+
+- **Getting Started Guides**: Step-by-step instructions for new users
+- **Feature Documentation**: Detailed explanations of all platform features
+- **Troubleshooting**: Solutions to common issues
+- **FAQs**: Answers to frequently asked questions
+- **Integration Guides**: Instructions for connecting with other services
+
+## Site Architecture
+
+The knowledge base follows a structured organization:
+
+- **Home Page**: Search bar and category navigation
+- **Category Pages**: Collections of related articles
+- **Article Pages**: Detailed documentation with step-by-step instructions
+
+### Categories
+
+- **Getting Started**
+  - Creating your account
+  - Configuring your first bot
+  - Connecting your WhatsApp
+
+- **Core Features**
+  - Automating Responses
+  - Creating Conversation Flows
+  - GPT Integration
+  - Contact Management
+
+- **Integrations**
+  - CRM Integration (Pipedrive, Hubspot)
+  - Google Sheets Integration
+  - Webhooks and API
+
+- **Billing and Account**
+  - Plan Information
+  - Changing Plans
+  - Invoice Management
+
+- **Troubleshooting**
+  - Bot Response Issues
+  - WhatsApp Connection Problems
+  - Common Errors
+
+## Development
+
+This knowledge base is built with Next.js and can be run locally for development:
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The site is configured for deployment on Vercel and can be accessed at [suporte.whatsbotgpt.store](https://suporte.whatsbotgpt.store).
 
-## Learn More
+## Content Management
 
-To learn more about Next.js, take a look at the following resources:
+Content is managed directly through the codebase, with articles written in Markdown and stored in the `/content` directory.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+To contribute to the documentation:
 
-## Deploy on Vercel
+1. Fork the repository
+2. Create a new branch for your changes
+3. Submit a pull request with your updates
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+All content should follow the style guide in the `/docs` directory.
