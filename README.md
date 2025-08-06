@@ -22,31 +22,35 @@ The knowledge base follows a structured organization:
 
 ### Categories
 
-- **Getting Started**
-  - Creating your account
-  - Configuring your first bot
-  - Connecting your WhatsApp
+- **Primeiros Passos** (First Steps)
+  - Criando sua Conta e Realizando o Primeiro Login
+  - Conectando seu WhatsApp
+  - Configurações Iniciais
 
-- **Core Features**
-  - Automating Responses
-  - Creating Conversation Flows
-  - GPT Integration
-  - Contact Management
+- **Assistentes** (Assistants)
+  - Criando seu Primeiro Assistente
+  - Personalizando Instruções e Personalidade
+  - Configurando Serviços Automatizados
 
-- **Integrations**
-  - CRM Integration (Pipedrive, Hubspot)
-  - Google Sheets Integration
-  - Webhooks and API
+- **Leads e Contatos** (Leads and Contacts)
+  - Gerenciando seus Leads
+  - Importando Contatos
+  - Qualificação de Leads
 
-- **Billing and Account**
-  - Plan Information
-  - Changing Plans
-  - Invoice Management
+- **Recursos e Funcionalidades** (Resources and Features)
+  - Agenda e Agendamentos
+  - Campanhas de Marketing
+  - Automações Avançadas
 
-- **Troubleshooting**
-  - Bot Response Issues
-  - WhatsApp Connection Problems
-  - Common Errors
+- **Conta e Faturamento** (Account and Billing)
+  - Gerenciando seu Plano
+  - Dados Cadastrais
+  - Histórico de Pagamentos
+
+- **Solução de Problemas** (Troubleshooting)
+  - Problemas de Resposta do Bot
+  - Problemas de Conexão com WhatsApp
+  - Erros Comuns e Soluções
 
 ## Development
 

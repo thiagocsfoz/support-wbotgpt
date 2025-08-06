@@ -4,10 +4,10 @@ import { notFound } from 'next/navigation';
 // This would typically come from a database or CMS
 // For now, we'll use a static mapping
 const articleData = {
-  'getting-started': {
-    'creating-account': {
-      title: 'Creating your account',
-      description: 'Learn how to sign up and set up your WhatsBotGPT account',
+  'primeiros-passos': {
+    'criando-conta': {
+      title: 'Criando sua Conta e Realizando o Primeiro Login',
+      description: 'Aprenda como se cadastrar e configurar sua conta WhatsBotGPT',
       content: `
 # Creating your WhatsBotGPT Account
 
@@ -62,12 +62,12 @@ If you encounter any issues during the sign-up process:
 - Clear your browser cache and try again
 - Contact support at support@whatsbotgpt.store
 
-Congratulations! You've successfully created your WhatsBotGPT account. The next step is to [configure your first bot](/getting-started/configuring-first-bot).
+Congratulations! You've successfully created your WhatsBotGPT account. The next step is to [conectar seu WhatsApp](/primeiros-passos/conectando-whatsapp).
       `
     },
-    'configuring-first-bot': {
-      title: 'Configuring your first bot',
-      description: 'Step-by-step guide to creating and configuring your first bot',
+    'conectando-whatsapp': {
+      title: 'Conectando seu WhatsApp',
+      description: 'Como conectar sua conta WhatsApp ao WhatsBotGPT',
       content: `
 # Configuring Your First Bot
 
@@ -120,7 +120,7 @@ Before you begin, make sure you have:
 
 ## Step 6: Connect to WhatsApp
 
-After testing and configuring your bot, you'll need to connect it to WhatsApp. See our guide on [Connecting your WhatsApp](/getting-started/connecting-whatsapp) for detailed instructions.
+After testing and configuring your bot, you'll need to connect it to WhatsApp. See our guide on [Conectando seu WhatsApp](/primeiros-passos/conectando-whatsapp) for detailed instructions.
 
 ## Best Practices
 
@@ -129,12 +129,12 @@ After testing and configuring your bot, you'll need to connect it to WhatsApp. S
 - Use clear and concise language in your bot's messages
 - Test your bot thoroughly before deploying it to customers
 
-Congratulations! You've configured your first bot. The next step is to [connect it to WhatsApp](/getting-started/connecting-whatsapp).
+Congratulations! You've configured your first bot. The next step is to [conectar seu WhatsApp](/primeiros-passos/conectando-whatsapp).
       `
     },
-    'connecting-whatsapp': {
-      title: 'Connecting your WhatsApp',
-      description: 'How to connect your WhatsApp account to WhatsBotGPT',
+    'configuracoes-iniciais': {
+      title: 'Configurações Iniciais',
+      description: 'Configure as opções básicas para começar a usar o WhatsBotGPT',
       content: `
 # Connecting Your WhatsApp to WhatsBotGPT
 
@@ -218,6 +218,485 @@ Congratulations! Your WhatsApp is now connected to WhatsBotGPT. You can start us
       `
     }
   },
+  'assistentes': {
+    'criando-assistente': {
+      title: 'Criando seu Primeiro Assistente',
+      description: 'Configure seu bot com personalidade e instruções personalizadas',
+      content: `
+# Criando seu Primeiro Assistente
+
+Este guia irá ajudá-lo a criar e configurar seu primeiro assistente virtual no WhatsBotGPT.
+
+## Pré-requisitos
+
+Antes de começar, certifique-se de que você tem:
+- Uma conta WhatsBotGPT ativa
+- Concluído o processo de conexão do WhatsApp
+
+## Passo 1: Acessar a Área de Assistentes
+
+1. Faça login na sua conta WhatsBotGPT
+2. No painel principal, clique em **Assistentes** no menu lateral
+3. Clique no botão **Criar Novo Assistente**
+
+## Passo 2: Informações Básicas
+
+1. Dê um nome ao seu assistente (ex: "Assistente de Vendas")
+2. Escolha um avatar ou faça upload de uma imagem personalizada
+3. Selecione o idioma principal do assistente
+4. Clique em **Próximo**
+
+## Passo 3: Definir a Personalidade
+
+1. Escolha o tom de comunicação:
+   - Formal
+   - Casual
+   - Amigável
+   - Profissional
+2. Defina o nível de detalhamento das respostas
+3. Configure o estilo de escrita
+4. Clique em **Próximo**
+
+## Passo 4: Instruções do Assistente
+
+Esta é a parte mais importante da configuração. Aqui você define exatamente o que seu assistente deve fazer.
+
+1. Na caixa de instruções, descreva:
+   - Quem é o assistente (ex: "Você é um assistente de vendas da empresa XYZ")
+   - O que ele deve fazer (ex: "Seu objetivo é qualificar leads e agendar demonstrações")
+   - Como ele deve se comportar (ex: "Seja cordial mas direto, valorize o tempo do cliente")
+   - Informações sobre produtos/serviços que ele deve conhecer
+   - Limitações do que ele pode ou não pode fazer
+
+2. Adicione exemplos de perguntas e respostas para treinar seu assistente
+3. Clique em **Próximo**
+
+## Passo 5: Configurar Serviços
+
+1. Habilite os serviços que seu assistente irá oferecer:
+   - Qualificação de Leads
+   - Agendamento
+   - FAQ Automático
+   - Atendimento Inicial
+2. Configure as opções específicas de cada serviço habilitado
+3. Clique em **Finalizar**
+
+## Testando seu Assistente
+
+Após criar seu assistente, é importante testá-lo antes de disponibilizá-lo aos seus clientes:
+
+1. Na página do assistente, clique na aba **Testar**
+2. Use o simulador de chat para enviar mensagens de teste
+3. Verifique se as respostas estão de acordo com o esperado
+4. Faça ajustes nas configurações conforme necessário
+
+## Dicas para um Assistente Eficaz
+
+- Seja específico nas instruções
+- Forneça exemplos claros de como o assistente deve responder
+- Atualize regularmente as informações do assistente
+- Analise as conversas para identificar pontos de melhoria
+
+Parabéns! Seu assistente está pronto para começar a atender seus clientes. Para aprender mais sobre como personalizar as instruções e a personalidade do seu assistente, consulte nosso artigo sobre [Personalizando Instruções e Personalidade](/assistentes/personalizando-instrucoes).
+      `
+    }
+  },
+  'leads-contatos': {
+    'gerenciando-leads': {
+      title: 'Gerenciando seus Leads',
+      description: 'Aprenda a visualizar e gerenciar os contatos gerados pelo seu bot',
+      content: `
+# Gerenciando seus Leads
+
+Este guia mostra como visualizar, organizar e gerenciar os leads gerados pelo seu assistente virtual.
+
+## Acessando a Área de Leads
+
+1. Faça login na sua conta WhatsBotGPT
+2. No painel principal, clique em **Leads e Contatos** no menu lateral
+3. Você verá a lista de todos os contatos que interagiram com seu assistente
+
+## Visualizando Informações dos Leads
+
+Cada lead contém informações importantes coletadas durante as conversas:
+
+1. Informações básicas:
+   - Nome
+   - Número de telefone
+   - Data do primeiro contato
+   - Status atual
+
+2. Dados de qualificação:
+   - Interesse demonstrado
+   - Orçamento (se informado)
+   - Urgência da necessidade
+   - Estágio no funil de vendas
+
+3. Histórico de interações:
+   - Conversas completas com o assistente
+   - Agendamentos realizados
+   - Documentos compartilhados
+
+## Organizando seus Leads
+
+Para facilitar o gerenciamento, você pode:
+
+1. Criar etiquetas personalizadas:
+   - Clique em **Gerenciar Etiquetas**
+   - Adicione etiquetas como "Cliente Potencial", "Aguardando Retorno", etc.
+   - Atribua cores para identificação visual
+
+2. Segmentar por status:
+   - Novo
+   - Em andamento
+   - Qualificado
+   - Convertido
+   - Perdido
+
+3. Criar listas personalizadas:
+   - Agrupe leads com características semelhantes
+   - Crie listas para campanhas específicas
+
+## Exportando Dados
+
+Para usar os dados em outras ferramentas:
+
+1. Selecione os leads desejados
+2. Clique em **Exportar**
+3. Escolha o formato (CSV, Excel)
+4. Selecione quais informações incluir na exportação
+
+## Integrando com CRM
+
+Se você utiliza um sistema de CRM:
+
+1. Acesse **Configurações** > **Integrações**
+2. Selecione seu sistema de CRM
+3. Siga as instruções para conectar as plataformas
+4. Configure a sincronização automática de leads
+
+## Melhores Práticas
+
+- Revise seus leads diariamente
+- Atribua etiquetas consistentes
+- Acompanhe o histórico de conversas para entender o contexto
+- Configure alertas para leads de alta prioridade
+- Limpe regularmente sua base de contatos
+
+Para aprender como importar contatos existentes para o WhatsBotGPT, consulte nosso artigo sobre [Importando Contatos](/leads-contatos/importando-contatos).
+      `
+    }
+  },
+  'recursos-funcionalidades': {
+    'agenda-agendamentos': {
+      title: 'Agenda e Agendamentos',
+      description: 'Como configurar e gerenciar agendamentos através do seu assistente',
+      content: `
+# Agenda e Agendamentos
+
+Este guia explica como configurar e utilizar o sistema de agendamentos do WhatsBotGPT para que seu assistente possa marcar compromissos automaticamente.
+
+## Configurando sua Agenda
+
+Antes de permitir que seu assistente faça agendamentos, você precisa configurar sua disponibilidade:
+
+1. No painel principal, acesse **Recursos** > **Agenda**
+2. Clique em **Configurar Disponibilidade**
+3. Defina seus horários disponíveis para cada dia da semana
+4. Configure intervalos entre compromissos (recomendamos 15-30 minutos)
+5. Defina feriados e dias especiais em que você não estará disponível
+6. Salve suas configurações
+
+## Criando Tipos de Compromissos
+
+Você pode criar diferentes tipos de compromissos que seu assistente poderá agendar:
+
+1. Clique em **Tipos de Compromissos**
+2. Selecione **Adicionar Novo Tipo**
+3. Configure:
+   - Nome (ex: "Demonstração de Produto", "Consulta Inicial")
+   - Duração padrão
+   - Descrição que o assistente usará para explicar este tipo de compromisso
+   - Informações necessárias para agendar (nome, email, telefone, etc.)
+   - Local (presencial, online, telefone)
+4. Salve o tipo de compromisso
+
+## Integrando com Calendários Externos
+
+Para sincronizar com Google Calendar, Outlook ou outros:
+
+1. Acesse **Configurações da Agenda** > **Integrações**
+2. Selecione o serviço de calendário que você utiliza
+3. Siga as instruções para autorizar a conexão
+4. Escolha quais calendários sincronizar
+5. Configure as opções de sincronização bidirecional
+
+## Como o Assistente Agenda Compromissos
+
+Quando configurado, seu assistente poderá:
+
+1. Oferecer agendamento quando identificar a necessidade
+2. Mostrar horários disponíveis com base na sua agenda
+3. Confirmar detalhes com o cliente
+4. Reservar o horário e enviar confirmação
+5. Enviar lembretes automáticos antes do compromisso
+
+## Gerenciando Compromissos Agendados
+
+Para visualizar e gerenciar todos os compromissos:
+
+1. Acesse **Agenda** > **Compromissos**
+2. Visualize por dia, semana ou mês
+3. Clique em um compromisso para:
+   - Ver detalhes completos
+   - Reagendar
+   - Cancelar
+   - Adicionar notas
+   - Enviar mensagem ao cliente
+
+## Configurando Lembretes Automáticos
+
+Para reduzir faltas e cancelamentos:
+
+1. Acesse **Configurações da Agenda** > **Lembretes**
+2. Configure lembretes automáticos para serem enviados:
+   - 1 dia antes
+   - 3 horas antes
+   - 30 minutos antes
+3. Personalize as mensagens de lembrete
+4. Ative a opção de confirmação nos lembretes
+
+## Análise de Agendamentos
+
+Para otimizar sua agenda:
+
+1. Acesse **Relatórios** > **Agendamentos**
+2. Visualize métricas como:
+   - Taxa de comparecimento
+   - Horários mais populares
+   - Tipos de compromissos mais agendados
+   - Tempo médio entre agendamento e compromisso
+
+Para aprender sobre outras funcionalidades, consulte nosso artigo sobre [Campanhas de Marketing](/recursos-funcionalidades/campanhas-marketing).
+      `
+    }
+  },
+  'conta-faturamento': {
+    'gerenciando-plano': {
+      title: 'Gerenciando seu Plano',
+      description: 'Como fazer upgrade, downgrade ou cancelar sua assinatura',
+      content: `
+# Gerenciando seu Plano
+
+Este guia explica como gerenciar sua assinatura do WhatsBotGPT, incluindo como fazer upgrade, downgrade ou cancelar seu plano.
+
+## Visualizando seu Plano Atual
+
+Para verificar os detalhes do seu plano atual:
+
+1. Faça login na sua conta WhatsBotGPT
+2. Clique no seu nome de usuário no canto superior direito
+3. Selecione **Conta e Faturamento**
+4. Na seção **Plano Atual**, você verá:
+   - Nome do plano
+   - Preço
+   - Data de renovação
+   - Recursos incluídos
+   - Limites de uso
+
+## Fazendo Upgrade do Plano
+
+Se você precisa de mais recursos ou atingiu os limites do seu plano atual:
+
+1. Acesse **Conta e Faturamento** > **Planos Disponíveis**
+2. Compare os planos disponíveis
+3. Clique em **Fazer Upgrade** no plano desejado
+4. Revise as mudanças de preço e recursos
+5. Confirme o upgrade
+6. O valor proporcional será cobrado imediatamente
+
+Benefícios do upgrade:
+- Acesso imediato a novos recursos
+- Aumento nos limites de uso
+- Prioridade no suporte técnico
+
+## Fazendo Downgrade do Plano
+
+Se você deseja reduzir custos:
+
+1. Acesse **Conta e Faturamento** > **Planos Disponíveis**
+2. Clique em **Fazer Downgrade** no plano desejado
+3. Revise as limitações e recursos que serão removidos
+4. Confirme o downgrade
+5. A mudança será aplicada no próximo ciclo de faturamento
+
+Importante saber:
+- O downgrade não gera reembolso proporcional
+- Você manterá os recursos do plano atual até o fim do ciclo de faturamento
+- Dados que excedem os limites do novo plano podem ficar inacessíveis
+
+## Cancelando sua Assinatura
+
+Se você deseja cancelar completamente:
+
+1. Acesse **Conta e Faturamento** > **Cancelar Assinatura**
+2. Selecione o motivo do cancelamento no formulário
+3. Leia as informações sobre o que acontece após o cancelamento
+4. Clique em **Confirmar Cancelamento**
+5. Você receberá um email confirmando o cancelamento
+
+Após o cancelamento:
+- Sua conta permanecerá ativa até o fim do período pago
+- Você pode reativar a qualquer momento antes do término
+- Após o término, seus dados ficarão disponíveis por 30 dias antes de serem removidos
+
+## Alterando Método de Pagamento
+
+Para atualizar suas informações de pagamento:
+
+1. Acesse **Conta e Faturamento** > **Métodos de Pagamento**
+2. Clique em **Adicionar Novo Método** ou **Editar** em um método existente
+3. Insira as novas informações
+4. Defina o método padrão para cobranças futuras
+5. Salve as alterações
+
+## Solução de Problemas de Faturamento
+
+Se você encontrar problemas com cobranças:
+
+1. Verifique seu histórico de pagamentos em **Conta e Faturamento** > **Histórico de Pagamentos**
+2. Para problemas específicos, clique em **Suporte de Faturamento**
+3. Preencha o formulário detalhando o problema
+4. Nossa equipe de faturamento responderá em até 24 horas úteis
+
+Para mais informações sobre sua conta, consulte nosso artigo sobre [Dados Cadastrais](/conta-faturamento/dados-cadastrais).
+      `
+    }
+  },
+  'solucao-problemas': {
+    'bot-nao-responde': {
+      title: 'Meu bot não está respondendo',
+      description: 'Solucione problemas de resposta do seu assistente',
+      content: `
+# Meu bot não está respondendo
+
+Se seu assistente virtual parou de responder às mensagens, siga este guia de solução de problemas para identificar e resolver a questão.
+
+## Verificações Rápidas
+
+Antes de qualquer troubleshooting avançado, verifique o seguinte:
+
+1. **Status da conexão do WhatsApp**
+   - Acesse o painel do WhatsBotGPT
+   - Verifique se o status da conexão está "Ativo"
+   - Confirme se o ícone de status está verde
+
+2. **Limites do plano**
+   - Verifique se você não atingiu o limite de mensagens do seu plano
+   - Acesse **Conta** > **Uso** para ver suas estatísticas atuais
+
+3. **Status do servidor**
+   - Verifique nossa página de status em status.whatsbotgpt.store
+   - Problemas nos servidores serão informados lá
+
+## Problemas Comuns e Soluções
+
+### 1. Conexão do WhatsApp Perdida
+
+**Sintomas:**
+- Status "Desconectado" no painel
+- Mensagens não são recebidas nem enviadas
+
+**Soluções:**
+1. Reconecte seu WhatsApp:
+   - Vá para **Conexões** > **WhatsApp**
+   - Clique em **Reconectar**
+   - Escaneie o QR code novamente com seu telefone
+
+2. Verifique seu telefone:
+   - Confirme que o telefone está conectado à internet
+   - Verifique se o WhatsApp está aberto e funcionando
+   - Reinicie o aplicativo WhatsApp
+
+### 2. Assistente Não Processa Mensagens
+
+**Sintomas:**
+- Mensagens são recebidas (marcadas como entregues)
+- Assistente não envia respostas
+
+**Soluções:**
+1. Verifique as configurações do assistente:
+   - Acesse **Assistentes** > [Nome do Assistente] > **Configurações**
+   - Confirme que o assistente está ativado
+   - Verifique se há regras de filtro que podem estar bloqueando as mensagens
+
+2. Reinicie o assistente:
+   - Vá para **Assistentes** > [Nome do Assistente]
+   - Clique em **Mais opções** (três pontos) > **Reiniciar Assistente**
+
+### 3. Respostas Lentas ou Timeout
+
+**Sintomas:**
+- O assistente demora muito para responder
+- Algumas mensagens são respondidas, outras não
+
+**Soluções:**
+1. Verifique a complexidade das instruções:
+   - Instruções muito longas ou complexas podem causar lentidão
+   - Simplifique as instruções do assistente temporariamente para testar
+
+2. Verifique a conexão de internet:
+   - Problemas de conexão podem afetar o tempo de resposta
+   - Teste em uma rede diferente
+
+### 4. Problemas com Conteúdo Específico
+
+**Sintomas:**
+- O assistente responde a algumas mensagens mas não a outras
+- Falha ao processar certos tipos de conteúdo
+
+**Soluções:**
+1. Verifique as políticas de conteúdo:
+   - Certifique-se de que o conteúdo não viola nossas políticas
+   - Conteúdo sensível pode ser filtrado automaticamente
+
+2. Verifique o formato das mensagens:
+   - Mensagens muito longas podem ser truncadas
+   - Formatos específicos (como áudio ou documentos) podem não ser suportados no seu plano
+
+## Ferramentas de Diagnóstico
+
+Para problemas persistentes, use nossas ferramentas de diagnóstico:
+
+1. **Teste de Conexão**
+   - Acesse **Ferramentas** > **Diagnóstico**
+   - Execute o **Teste de Conexão do WhatsApp**
+   - Verifique os resultados e siga as recomendações
+
+2. **Logs do Sistema**
+   - Acesse **Ferramentas** > **Logs**
+   - Filtre por "Erros" ou "Avisos"
+   - Procure mensagens relacionadas ao seu assistente
+
+## Quando Contatar o Suporte
+
+Se você tentou todas as soluções acima e o problema persiste:
+
+1. Reúna informações:
+   - ID do seu assistente
+   - Horário aproximado em que o problema começou
+   - Capturas de tela de mensagens de erro
+   - Logs relevantes
+
+2. Contate nosso suporte:
+   - Email: support@whatsbotgpt.store
+   - Chat ao vivo: Disponível em horário comercial
+   - Inclua todas as informações coletadas
+
+Para outros problemas comuns, consulte nosso artigo sobre [Problemas de Conexão com WhatsApp](/solucao-problemas/problemas-conexao-whatsapp).
+      `
+    }
+  }
   // Add more articles for other categories as needed
 };
 
@@ -248,12 +727,12 @@ export default function ArticlePage({ params }) {
 
   const articleInfo = articleData[category][article];
   const categoryTitle = {
-    'getting-started': 'Primeiros Passos',
-    'core-features': 'Recursos Principais',
-    'integrations': 'Integrações',
-    'billing-account': 'Faturamento & Conta',
-    'troubleshooting': 'Solução de Problemas',
-    'faqs': 'Perguntas Frequentes'
+    'primeiros-passos': 'Primeiros Passos',
+    'assistentes': 'Assistentes',
+    'leads-contatos': 'Leads e Contatos',
+    'recursos-funcionalidades': 'Recursos e Funcionalidades',
+    'conta-faturamento': 'Conta e Faturamento',
+    'solucao-problemas': 'Solução de Problemas'
   }[category];
 
   // Function to convert markdown-like content to JSX

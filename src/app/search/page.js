@@ -8,60 +8,67 @@ import { useState, useEffect, Suspense } from 'react';
 // For now, we'll use a static list of searchable content
 const searchableContent = [
   {
-    title: 'Criando sua conta',
+    title: 'Criando sua Conta e Realizando o Primeiro Login',
     description: 'Aprenda como se cadastrar e configurar sua conta WhatsBotGPT',
-    category: 'getting-started',
-    slug: 'creating-account',
-    content: 'Criando sua conta WhatsBotGPT Bem-vindo ao WhatsBotGPT! Este guia irá orientá-lo no processo de criação e configuração da sua conta.'
-  },
-  {
-    title: 'Configurando seu primeiro bot',
-    description: 'Guia passo a passo para criar e configurar seu primeiro bot',
-    category: 'getting-started',
-    slug: 'configuring-first-bot',
-    content: 'Configurando seu primeiro bot Este guia irá ajudá-lo a criar e configurar seu primeiro WhatsBot usando nossa plataforma.'
+    category: 'primeiros-passos',
+    slug: 'criando-conta',
+    content: 'Criando sua Conta e Realizando o Primeiro Login Bem-vindo ao WhatsBotGPT! Este guia irá orientá-lo no processo de criação e configuração da sua conta.'
   },
   {
     title: 'Conectando seu WhatsApp',
     description: 'Como conectar sua conta WhatsApp ao WhatsBotGPT',
-    category: 'getting-started',
-    slug: 'connecting-whatsapp',
+    category: 'primeiros-passos',
+    slug: 'conectando-whatsapp',
     content: 'Conectando seu WhatsApp ao WhatsBotGPT Este guia irá orientá-lo no processo de conexão da sua conta WhatsApp ao seu bot WhatsBotGPT.'
   },
   {
-    title: 'Automatizando Respostas',
-    description: 'Configure respostas automáticas para perguntas comuns dos clientes',
-    category: 'core-features',
-    slug: 'automating-responses',
-    content: 'Automatizando Respostas Aprenda como configurar respostas automáticas para lidar com perguntas comuns dos clientes de forma eficiente.'
+    title: 'Configurações Iniciais',
+    description: 'Configure as opções básicas para começar a usar o WhatsBotGPT',
+    category: 'primeiros-passos',
+    slug: 'configuracoes-iniciais',
+    content: 'Configurações Iniciais Aprenda como configurar as opções básicas do WhatsBotGPT para começar a usar a plataforma de forma eficiente.'
   },
   {
-    title: 'Criando Fluxos de Conversa',
-    description: 'Projete fluxos de conversa complexos para seu bot',
-    category: 'core-features',
-    slug: 'conversation-flows',
-    content: 'Criando Fluxos de Conversa Projete fluxos de conversa interativos e dinâmicos para guiar seus clientes através de interações complexas.'
+    title: 'Criando seu Primeiro Assistente',
+    description: 'Configure seu bot com personalidade e instruções personalizadas',
+    category: 'assistentes',
+    slug: 'criando-assistente',
+    content: 'Criando seu Primeiro Assistente Este guia irá ajudá-lo a criar e configurar seu primeiro assistente virtual no WhatsBotGPT.'
   },
   {
-    title: 'Integração com GPT',
-    description: 'Aproveite o GPT para criar respostas inteligentes',
-    category: 'core-features',
-    slug: 'gpt-integration',
-    content: 'Integração com GPT Aprenda como usar o GPT para gerar respostas inteligentes e contextuais para seus clientes.'
+    title: 'Personalizando Instruções e Personalidade',
+    description: 'Aprenda a definir como seu assistente deve se comportar e responder',
+    category: 'assistentes',
+    slug: 'personalizando-instrucoes',
+    content: 'Personalizando Instruções e Personalidade Aprenda a definir como seu assistente deve se comportar e responder para criar uma experiência única para seus clientes.'
   },
   {
-    title: 'Integração com CRM',
-    description: 'Conecte-se com Pipedrive, Hubspot e outras plataformas de CRM',
-    category: 'integrations',
-    slug: 'crm-integration',
-    content: 'Integração com CRM Conecte o WhatsBotGPT com plataformas populares de CRM para otimizar o gerenciamento de clientes.'
+    title: 'Gerenciando seus Leads',
+    description: 'Aprenda a visualizar e gerenciar os contatos gerados pelo seu bot',
+    category: 'leads-contatos',
+    slug: 'gerenciando-leads',
+    content: 'Gerenciando seus Leads Este guia mostra como visualizar, organizar e gerenciar os leads gerados pelo seu assistente virtual.'
+  },
+  {
+    title: 'Agenda e Agendamentos',
+    description: 'Como configurar e gerenciar agendamentos através do seu assistente',
+    category: 'recursos-funcionalidades',
+    slug: 'agenda-agendamentos',
+    content: 'Agenda e Agendamentos Este guia explica como configurar e utilizar o sistema de agendamentos do WhatsBotGPT para que seu assistente possa marcar compromissos automaticamente.'
+  },
+  {
+    title: 'Gerenciando seu Plano',
+    description: 'Como fazer upgrade, downgrade ou cancelar sua assinatura',
+    category: 'conta-faturamento',
+    slug: 'gerenciando-plano',
+    content: 'Gerenciando seu Plano Este guia explica como gerenciar sua assinatura do WhatsBotGPT, incluindo como fazer upgrade, downgrade ou cancelar seu plano.'
   },
   {
     title: 'Meu bot não está respondendo',
-    description: 'Solucione problemas de resposta do bot',
-    category: 'troubleshooting',
-    slug: 'bot-not-responding',
-    content: 'Meu bot não está respondendo Solucione problemas comuns que podem impedir seu bot de responder às mensagens.'
+    description: 'Solucione problemas de resposta do seu assistente',
+    category: 'solucao-problemas',
+    slug: 'bot-nao-responde',
+    content: 'Meu bot não está respondendo Solucione problemas comuns que podem impedir seu assistente de responder às mensagens.'
   }
 ];
 
@@ -83,12 +90,12 @@ const searchContent = (query) => {
 // Function to get the category title
 const getCategoryTitle = (category) => {
   const categoryTitles = {
-    'getting-started': 'Primeiros Passos',
-    'core-features': 'Recursos Principais',
-    'integrations': 'Integrações',
-    'billing-account': 'Faturamento & Conta',
-    'troubleshooting': 'Solução de Problemas',
-    'faqs': 'Perguntas Frequentes'
+    'primeiros-passos': 'Primeiros Passos',
+    'assistentes': 'Assistentes',
+    'leads-contatos': 'Leads e Contatos',
+    'recursos-funcionalidades': 'Recursos e Funcionalidades',
+    'conta-faturamento': 'Conta e Faturamento',
+    'solucao-problemas': 'Solução de Problemas'
   };
 
   return categoryTitles[category] || category;

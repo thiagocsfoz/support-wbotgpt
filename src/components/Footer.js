@@ -11,13 +11,13 @@ export default function Footer() {
             </Link>
           </div>
           <div className="px-5 py-2">
-            <Link href="/getting-started" className="text-base text-gray-500 hover:text-gray-900">
+            <Link href="/primeiros-passos" className="text-base text-gray-500 hover:text-gray-900">
               Primeiros Passos
             </Link>
           </div>
           <div className="px-5 py-2">
-            <Link href="/faqs" className="text-base text-gray-500 hover:text-gray-900">
-              Perguntas Frequentes
+            <Link href="/assistentes" className="text-base text-gray-500 hover:text-gray-900">
+              Assistentes
             </Link>
           </div>
           <div className="px-5 py-2">

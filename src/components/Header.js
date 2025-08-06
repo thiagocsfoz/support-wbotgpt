@@ -21,23 +21,23 @@ export default function Header() {
             </div>
           </div>
           <nav className="hidden md:flex space-x-8 items-center">
-            <Link href="/getting-started" className="text-gray-600 hover:text-gray-900">
+            <Link href="/primeiros-passos" className="text-gray-600 hover:text-gray-900">
               Primeiros Passos
             </Link>
-            <Link href="/core-features" className="text-gray-600 hover:text-gray-900">
-              Recursos Principais
+            <Link href="/assistentes" className="text-gray-600 hover:text-gray-900">
+              Assistentes
             </Link>
-            <Link href="/integrations" className="text-gray-600 hover:text-gray-900">
-              Integrações
+            <Link href="/leads-contatos" className="text-gray-600 hover:text-gray-900">
+              Leads e Contatos
             </Link>
-            <Link href="/billing-account" className="text-gray-600 hover:text-gray-900">
-              Faturamento & Conta
+            <Link href="/recursos-funcionalidades" className="text-gray-600 hover:text-gray-900">
+              Recursos e Funcionalidades
             </Link>
-            <Link href="/troubleshooting" className="text-gray-600 hover:text-gray-900">
+            <Link href="/conta-faturamento" className="text-gray-600 hover:text-gray-900">
+              Conta e Faturamento
+            </Link>
+            <Link href="/solucao-problemas" className="text-gray-600 hover:text-gray-900">
               Solução de Problemas
-            </Link>
-            <Link href="/faqs" className="text-gray-600 hover:text-gray-900">
-              Perguntas Frequentes
             </Link>
           </nav>
         </div>

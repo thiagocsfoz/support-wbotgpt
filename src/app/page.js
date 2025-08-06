@@ -51,27 +51,27 @@ export default function Home() {
           <div className="mt-10">
             <ul className="space-y-4">
               <li className="bg-white shadow overflow-hidden rounded-md">
-                <Link href="/getting-started/creating-account" className="block hover:bg-gray-50 p-4">
-                  <p className="text-lg font-medium text-blue-600">Criando sua conta</p>
+                <Link href="/primeiros-passos/criando-conta" className="block hover:bg-gray-50 p-4">
+                  <p className="text-lg font-medium text-blue-600">Criando sua Conta e Realizando o Primeiro Login</p>
                   <p className="mt-1 text-gray-600">Aprenda como se cadastrar e configurar sua conta WhatsBotGPT</p>
                 </Link>
               </li>
               <li className="bg-white shadow overflow-hidden rounded-md">
-                <Link href="/core-features/automating-responses" className="block hover:bg-gray-50 p-4">
-                  <p className="text-lg font-medium text-blue-600">Automatizando Respostas</p>
-                  <p className="mt-1 text-gray-600">Configure respostas automáticas para perguntas comuns dos clientes</p>
+                <Link href="/assistentes/criando-assistente" className="block hover:bg-gray-50 p-4">
+                  <p className="text-lg font-medium text-blue-600">Criando seu Primeiro Assistente</p>
+                  <p className="mt-1 text-gray-600">Configure seu bot com personalidade e instruções personalizadas</p>
                 </Link>
               </li>
               <li className="bg-white shadow overflow-hidden rounded-md">
-                <Link href="/troubleshooting/bot-not-responding" className="block hover:bg-gray-50 p-4">
+                <Link href="/leads-contatos/gerenciando-leads" className="block hover:bg-gray-50 p-4">
+                  <p className="text-lg font-medium text-blue-600">Gerenciando seus Leads</p>
+                  <p className="mt-1 text-gray-600">Aprenda a visualizar e gerenciar os contatos gerados pelo seu bot</p>
+                </Link>
+              </li>
+              <li className="bg-white shadow overflow-hidden rounded-md">
+                <Link href="/solucao-problemas/bot-nao-responde" className="block hover:bg-gray-50 p-4">
                   <p className="text-lg font-medium text-blue-600">Meu bot não está respondendo</p>
-                  <p className="mt-1 text-gray-600">Solucione problemas de resposta do bot</p>
-                </Link>
-              </li>
-              <li className="bg-white shadow overflow-hidden rounded-md">
-                <Link href="/integrations/crm-integration" className="block hover:bg-gray-50 p-4">
-                  <p className="text-lg font-medium text-blue-600">Integração com CRM</p>
-                  <p className="mt-1 text-gray-600">Conecte o WhatsBotGPT com plataformas populares de CRM</p>
+                  <p className="mt-1 text-gray-600">Solucione problemas de resposta do seu assistente</p>
                 </Link>
               </li>
             </ul>

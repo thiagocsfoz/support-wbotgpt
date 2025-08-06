@@ -4,134 +4,129 @@ import { notFound } from 'next/navigation';
 // This would typically come from a database or CMS
 // For now, we'll use a static mapping
 const categoryData = {
-  'getting-started': {
+  'primeiros-passos': {
     title: 'Primeiros Passos',
-    description: 'Aprenda como configurar e começar a usar o WhatsBotGPT',
+    description: 'Aprenda a configurar sua conta e conectar seu WhatsApp',
     articles: [
       {
-        slug: 'creating-account',
-        title: 'Criando sua conta',
+        slug: 'criando-conta',
+        title: 'Criando sua Conta e Realizando o Primeiro Login',
         description: 'Aprenda como se cadastrar e configurar sua conta WhatsBotGPT'
       },
       {
-        slug: 'configuring-first-bot',
-        title: 'Configurando seu primeiro bot',
-        description: 'Guia passo a passo para criar e configurar seu primeiro bot'
-      },
-      {
-        slug: 'connecting-whatsapp',
+        slug: 'conectando-whatsapp',
         title: 'Conectando seu WhatsApp',
         description: 'Como conectar sua conta WhatsApp ao WhatsBotGPT'
+      },
+      {
+        slug: 'configuracoes-iniciais',
+        title: 'Configurações Iniciais',
+        description: 'Configure as opções básicas para começar a usar o WhatsBotGPT'
       }
     ]
   },
-  'core-features': {
-    title: 'Recursos Principais',
-    description: 'Descubra as principais capacidades da plataforma',
+  'assistentes': {
+    title: 'Assistentes',
+    description: 'Crie e personalize as instruções, personalidade e serviços do seu bot',
     articles: [
       {
-        slug: 'automating-responses',
-        title: 'Automatizando Respostas',
-        description: 'Configure respostas automáticas para perguntas comuns dos clientes'
+        slug: 'criando-assistente',
+        title: 'Criando seu Primeiro Assistente',
+        description: 'Configure seu bot com personalidade e instruções personalizadas'
       },
       {
-        slug: 'conversation-flows',
-        title: 'Criando Fluxos de Conversa',
-        description: 'Projete fluxos de conversa complexos para seu bot'
+        slug: 'personalizando-instrucoes',
+        title: 'Personalizando Instruções e Personalidade',
+        description: 'Aprenda a definir como seu assistente deve se comportar e responder'
       },
       {
-        slug: 'gpt-integration',
-        title: 'Integração com GPT',
-        description: 'Aproveite o GPT para criar respostas inteligentes'
-      },
-      {
-        slug: 'contact-management',
-        title: 'Gerenciamento de Contatos',
-        description: 'Organize e gerencie seus contatos de forma eficaz'
+        slug: 'configurando-servicos',
+        title: 'Configurando Serviços Automatizados',
+        description: 'Configure seu assistente para realizar tarefas específicas automaticamente'
       }
     ]
   },
-  'integrations': {
-    title: 'Integrações',
-    description: 'Conecte o WhatsBotGPT com outros serviços',
+  'leads-contatos': {
+    title: 'Leads e Contatos',
+    description: 'Gerencie, importe e trate os leads gerados pelo seu assistente',
     articles: [
       {
-        slug: 'crm-integration',
-        title: 'Integração com CRM',
-        description: 'Conecte-se com Pipedrive, Hubspot e outras plataformas de CRM'
+        slug: 'gerenciando-leads',
+        title: 'Gerenciando seus Leads',
+        description: 'Aprenda a visualizar e gerenciar os contatos gerados pelo seu bot'
       },
       {
-        slug: 'google-sheets',
-        title: 'Integração com Google Sheets',
-        description: 'Sincronize dados com o Google Sheets'
+        slug: 'importando-contatos',
+        title: 'Importando Contatos',
+        description: 'Como importar contatos existentes para o WhatsBotGPT'
       },
       {
-        slug: 'webhooks-api',
-        title: 'Webhooks e API',
-        description: 'Opções avançadas de integração usando webhooks e nossa API'
+        slug: 'qualificacao-leads',
+        title: 'Qualificação de Leads',
+        description: 'Estratégias para qualificar leads através do seu assistente'
       }
     ]
   },
-  'billing-account': {
-    title: 'Faturamento & Conta',
-    description: 'Gerencie sua assinatura e configurações de conta',
+  'recursos-funcionalidades': {
+    title: 'Recursos e Funcionalidades',
+    description: 'Explore tudo sobre a Agenda, Campanhas e outras ferramentas',
     articles: [
       {
-        slug: 'plans-info',
-        title: 'Informações de Planos',
-        description: 'Detalhes sobre nossos planos de preços e recursos'
+        slug: 'agenda-agendamentos',
+        title: 'Agenda e Agendamentos',
+        description: 'Como configurar e gerenciar agendamentos através do seu assistente'
       },
       {
-        slug: 'changing-plans',
-        title: 'Alterando Planos',
-        description: 'Como fazer upgrade ou downgrade da sua assinatura'
+        slug: 'campanhas-marketing',
+        title: 'Campanhas de Marketing',
+        description: 'Crie e gerencie campanhas de marketing automatizadas'
       },
       {
-        slug: 'invoice-management',
-        title: 'Gerenciamento de Faturas',
-        description: 'Acesse e gerencie suas faturas'
+        slug: 'automacoes-avancadas',
+        title: 'Automações Avançadas',
+        description: 'Recursos avançados para automatizar processos complexos'
       }
     ]
   },
-  'troubleshooting': {
+  'conta-faturamento': {
+    title: 'Conta e Faturamento',
+    description: 'Gerencie seu plano, dados cadastrais e histórico de pagamentos',
+    articles: [
+      {
+        slug: 'gerenciando-plano',
+        title: 'Gerenciando seu Plano',
+        description: 'Como fazer upgrade, downgrade ou cancelar sua assinatura'
+      },
+      {
+        slug: 'dados-cadastrais',
+        title: 'Dados Cadastrais',
+        description: 'Atualize suas informações pessoais e de faturamento'
+      },
+      {
+        slug: 'historico-pagamentos',
+        title: 'Histórico de Pagamentos',
+        description: 'Acesse e gerencie suas faturas e histórico de pagamentos'
+      }
+    ]
+  },
+  'solucao-problemas': {
     title: 'Solução de Problemas',
-    description: 'Resolva problemas e questões comuns',
+    description: 'Encontre soluções rápidas para os problemas mais comuns',
     articles: [
       {
-        slug: 'bot-not-responding',
+        slug: 'bot-nao-responde',
         title: 'Meu bot não está respondendo',
-        description: 'Solucione problemas de resposta do bot'
+        description: 'Solucione problemas de resposta do seu assistente'
       },
       {
-        slug: 'whatsapp-connection',
+        slug: 'problemas-conexao-whatsapp',
         title: 'Problemas de Conexão com WhatsApp',
         description: 'Resolva problemas de conectividade com o WhatsApp'
       },
       {
-        slug: 'common-errors',
-        title: 'Erros Comuns',
-        description: 'Soluções para erros frequentemente encontrados'
-      }
-    ]
-  },
-  'faqs': {
-    title: 'Perguntas Frequentes',
-    description: 'Respostas para perguntas frequentes',
-    articles: [
-      {
-        slug: 'account-limits',
-        title: 'Limites de Conta',
-        description: 'Informações sobre limites de mensagens e restrições'
-      },
-      {
-        slug: 'data-privacy',
-        title: 'Privacidade de Dados',
-        description: 'Como lidamos e protegemos seus dados'
-      },
-      {
-        slug: 'supported-platforms',
-        title: 'Plataformas Suportadas',
-        description: 'Quais plataformas e dispositivos são suportados'
+        slug: 'erros-comuns',
+        title: 'Erros Comuns e Soluções',
+        description: 'Soluções para os erros mais frequentemente encontrados'
       }
     ]
   }

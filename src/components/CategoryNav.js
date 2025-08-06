@@ -2,46 +2,46 @@ import Link from 'next/link';
 
 const categories = [
   {
-    id: 'getting-started',
+    id: 'primeiros-passos',
     name: 'Primeiros Passos',
-    description: 'Aprenda como configurar e começar a usar o WhatsBotGPT',
+    description: 'Aprenda a configurar sua conta e conectar seu WhatsApp',
     icon: '🚀',
-    href: '/getting-started'
+    href: '/primeiros-passos'
   },
   {
-    id: 'core-features',
-    name: 'Recursos Principais',
-    description: 'Descubra as principais capacidades da plataforma',
+    id: 'assistentes',
+    name: 'Assistentes',
+    description: 'Crie e personalize as instruções, personalidade e serviços do seu bot',
+    icon: '🤖',
+    href: '/assistentes'
+  },
+  {
+    id: 'leads-contatos',
+    name: 'Leads e Contatos',
+    description: 'Gerencie, importe e trate os leads gerados pelo seu assistente',
+    icon: '👥',
+    href: '/leads-contatos'
+  },
+  {
+    id: 'recursos-funcionalidades',
+    name: 'Recursos e Funcionalidades',
+    description: 'Explore tudo sobre a Agenda, Campanhas e outras ferramentas',
     icon: '⚙️',
-    href: '/core-features'
+    href: '/recursos-funcionalidades'
   },
   {
-    id: 'integrations',
-    name: 'Integrações',
-    description: 'Conecte o WhatsBotGPT com outros serviços',
-    icon: '🔄',
-    href: '/integrations'
-  },
-  {
-    id: 'billing-account',
-    name: 'Faturamento & Conta',
-    description: 'Gerencie sua assinatura e configurações de conta',
+    id: 'conta-faturamento',
+    name: 'Conta e Faturamento',
+    description: 'Gerencie seu plano, dados cadastrais e histórico de pagamentos',
     icon: '💳',
-    href: '/billing-account'
+    href: '/conta-faturamento'
   },
   {
-    id: 'troubleshooting',
+    id: 'solucao-problemas',
     name: 'Solução de Problemas',
-    description: 'Resolva problemas e questões comuns',
+    description: 'Encontre soluções rápidas para os problemas mais comuns',
     icon: '🔧',
-    href: '/troubleshooting'
-  },
-  {
-    id: 'faqs',
-    name: 'Perguntas Frequentes',
-    description: 'Respostas para perguntas frequentes',
-    icon: '❓',
-    href: '/faqs'
+    href: '/solucao-problemas'
   }
 ];
 
