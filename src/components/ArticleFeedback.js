@@ -1,11 +1,24 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 export default function ArticleFeedback({ category, article }) {
   const [feedbackStatus, setFeedbackStatus] = useState('initial'); // 'initial', 'submitted', 'error'
   const [isHelpful, setIsHelpful] = useState(null);
   const [feedbackData, setFeedbackData] = useState(null);
+
+  // Fetch feedback statistics for this article (memoized to avoid effect warnings/loops)
+  const fetchFeedbackStats = useCallback(async () => {
+    try {
+      const response = await fetch(`/api/feedback?category=${category}&article=${article}`);
+      if (response.ok) {
+        const result = await response.json();
+        setFeedbackData(result.data);
+      }
+    } catch (error) {
+      console.error('Error fetching feedback stats:', error);
+    }
+  }, [category, article]);
 
   // Check if user has already provided feedback for this article
   useEffect(() => {
@@ -20,20 +33,7 @@ export default function ArticleFeedback({ category, article }) {
 
     // Fetch current feedback stats for this article
     fetchFeedbackStats();
-  }, [category, article]);
-
-  // Fetch feedback statistics for this article
-  const fetchFeedbackStats = async () => {
-    try {
-      const response = await fetch(`/api/feedback?category=${category}&article=${article}`);
-      if (response.ok) {
-        const result = await response.json();
-        setFeedbackData(result.data);
-      }
-    } catch (error) {
-      console.error('Error fetching feedback stats:', error);
-    }
-  };
+  }, [category, article, fetchFeedbackStats]);
 
   // Submit feedback
   const submitFeedback = async (helpful) => {

@@ -87,7 +87,6 @@ export default function ArticlePage({ params }) {
           
           return (
             <div key={`img-${lineIndex}`} className="my-4">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 
                 src={src} 
                 alt={altText} 

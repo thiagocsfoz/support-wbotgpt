@@ -183,7 +183,7 @@ function SearchContent() {
             </p>
             <div className="mt-4">
               <a
-                href="mailto:support@whatsbotgpt.store"
+                href="mailto:contato@whatsbotgpt.store"
                 className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
               >
                 Contatar Suporte

@@ -89,7 +89,7 @@ export default function Home() {
           <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
             <div className="inline-flex rounded-md shadow">
               <a
-                href="mailto:support@whatsbotgpt.store"
+                href="mailto:contato@whatsbotgpt.store"
                 className="inline-flex items-center justify-center px-6 py-4 border border-transparent text-base font-medium rounded-md text-[var(--primary)] bg-white hover:bg-gray-50 transition-colors duration-200"
               >
                 Contatar Suporte
