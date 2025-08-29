@@ -407,7 +407,7 @@ Implemente um sistema de suporte escalonável:
 
 Para aprofundar seus conhecimentos em automações avançadas:
 
-1. **Documentação técnica completa**: Disponível em nossa [base de conhecimento](https://docs.whatsbotgpt.store)
+1. **Documentação técnica completa**: Disponível em nossa [base de conhecimento](/)
 2. **Webinars de treinamento**: Sessões mensais sobre recursos avançados
 3. **Biblioteca de modelos**: Fluxos pré-configurados para casos de uso comuns
 4. **Comunidade de usuários**: Fórum para compartilhar práticas e soluções

@@ -82,8 +82,7 @@ Antes de prosseguir com soluções mais técnicas, verifique estes pontos básic
 
 **Soluções:**
 1. Verifique o status do serviço:
-   - Acesse a página de [Status do Sistema](https://status.whatsbotgpt.store)
-   - Verifique se há alguma interrupção reportada
+   - Verifique se há alguma interrupção reportada no painel ou em nossos canais oficiais de comunicação
    - Se houver problemas reportados, aguarde a resolução
 
 2. Reinicie o assistente:

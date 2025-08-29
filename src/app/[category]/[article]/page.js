@@ -201,22 +201,43 @@ export default function ArticlePage({ params }) {
       // Process the link text for bold formatting
       const linkText = processBoldText(linkMatch[1], lineIndex, linkMatch.index + 1);
 
-      // Add the link - use anchor tag for internal links, Link component for external
-      const url = linkMatch[2];
-      if (url.startsWith('#')) {
-        // Internal anchor link
+      // Normalize and classify URL types
+      let url = (linkMatch[2] || '').trim();
+
+      // Guard against Cloudflare obfuscation leftovers
+      if (url === '/cdn-cgi/l/email-protection' || url.startsWith('/cdn-cgi/l/email-protection')) {
+        // Replace with a safe default mailto (prevents 404 outlink)
+        url = 'mailto:contato@whatsbotgpt.store';
+      }
+
+      const isAnchor = url.startsWith('#');
+      const isMailto = url.toLowerCase().startsWith('mailto:');
+      const isTel = url.toLowerCase().startsWith('tel:');
+      const isHttp = url.toLowerCase().startsWith('http://') || url.toLowerCase().startsWith('https://');
+      const isInternalRoute = url.startsWith('/');
+
+      if (isAnchor || isMailto || isTel || isHttp) {
+        // Use a native anchor for anchors, mailto/tel, and external http(s)
         parts.push(
-          <a key={`link-${lineIndex}-${linkMatch.index}`} href={url} className="text-blue-600 hover:text-blue-800">
+          <a
+            key={`link-${lineIndex}-${linkMatch.index}`}
+            href={url}
+            className="text-blue-600 hover:text-blue-800"
+            {...(isHttp ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+          >
             {linkText}
           </a>
         );
-      } else {
-        // External or route link
+      } else if (isInternalRoute) {
+        // Internal app route
         parts.push(
           <Link key={`link-${lineIndex}-${linkMatch.index}`} href={url} className="text-blue-600 hover:text-blue-800">
             {linkText}
           </Link>
         );
+      } else {
+        // Fallback: leave as plain text if URL type is unknown
+        parts.push(linkText);
       }
 
       lastIndex = linkMatch.index + linkMatch[0].length;
