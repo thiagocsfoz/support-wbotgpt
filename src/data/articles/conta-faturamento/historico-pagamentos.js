@@ -141,7 +141,7 @@ Para solicitar um reembolso:
 4. Forneça detalhes adicionais no campo de comentários
 5. Clique em **Enviar Solicitação**
 
-**Importante**: As políticas de reembolso variam de acordo com o plano contratado e o tempo decorrido desde a compra. Consulte nossos [Termos de Uso](https://www.whatsbotgpt.store/termos) para mais informações.
+**Importante**: As políticas de reembolso variam de acordo com o plano contratado e o tempo decorrido desde a compra. Consulte nossa [Política de Reembolso](https://www.whatsbotgpt.store/politica-de-reembolso) para mais informações.
 
 ## Alterações de Plano e Cobranças Proporcionais
 
